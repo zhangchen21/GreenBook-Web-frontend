@@ -1,0 +1,22 @@
+@import 'src/Shared/layout/variables';
+
+.ContentBar {
+  flex-basis: 800px;
+  flex-grow: 1;
+
+  .channelList {
+    padding-bottom: 12px;
+    display: flex;
+
+    button {
+      width: 96px;
+    }
+  }
+
+  .trendlist {
+    display: grid;
+
+    height: 100%;
+    overflow: auto;
+  }
+}

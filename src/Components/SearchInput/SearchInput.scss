@@ -1,0 +1,23 @@
+@import 'src/Shared/layout/variables';
+
+.searchInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+
+  .ant-input-affix-wrapper {
+    &:focus,
+    &:hover,
+    &-focused {
+      box-shadow: none !important;
+      border-color: #d9d9d9 !important;
+    }
+  }
+
+  .questionArea {
+      line-height: 32px;
+      border-radius: 22px;
+      border-right: none;
+  }
+}

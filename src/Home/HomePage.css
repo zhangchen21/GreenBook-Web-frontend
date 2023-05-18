@@ -1,0 +1,79 @@
+.home-body {
+  text-align: center;
+  padding-top: 100px;
+  height: 350px;
+  box-sizing: border-box;
+}
+
+.home-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.home-description {
+  font-size: 18px;
+  color: #666666;
+}
+
+.home-button {
+  margin-top: 32px;
+}
+
+/* Feature Section */
+.feature-section {
+  background-color: #FFFFFF;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.section-title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.feature-card {
+  text-align: center;
+  border: 1px solid rgb(240, 240, 240);
+  height: 200px;
+}
+
+.feature-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+
+.feature-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.feature-description {
+  font-size: 16px;
+  color: #666666;
+}
+
+/* Call to Action Section */
+.call-to-action-section {
+  padding: 100px;
+  background-color: #F8F8F8;
+  text-align: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.cta-description {
+  font-size: 18px;
+  color: #666666;
+  margin-bottom: 48px;
+}
+
+.cta-button {
+  font-size: 18px;
+}

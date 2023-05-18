@@ -1,0 +1,18 @@
+@import 'src/Shared/layout/variables';
+
+.normalBtn {
+  height: 48px;
+  border-radius: 22px;
+  line-height: 48px;
+  font-size: 18px;
+  font-weight: 600;    
+  margin-bottom: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.selectedBtn {
+  background-color: $currentBackgroundColor;
+  font-weight: bold;
+}

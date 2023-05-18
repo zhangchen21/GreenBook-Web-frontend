@@ -1,0 +1,33 @@
+@import 'src/Shared/layout/variables';
+
+.Navbar {
+  display: flex;
+  height: 100%;
+  padding: 0 22px;
+  justify-content: space-between;
+  align-items: center;
+
+  .brand {
+    width: 187px;
+    img {
+      height: 48px;
+      border-radius: 10px;
+    }
+
+    color: $brandColor;
+    font-size: 25px;
+    font-weight: bolder;
+  }
+
+  .items {
+    height: $navHeight;
+    color: rgba(51,51,51,.8);
+    font-size: 18px;
+    line-height: $navHeight;
+    
+    span {
+      line-height: $navHeight;
+      margin-right: 22px;
+    }
+  }
+}

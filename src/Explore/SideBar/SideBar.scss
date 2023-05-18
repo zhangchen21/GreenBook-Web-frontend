@@ -1,0 +1,23 @@
+@import 'src/Shared/layout/variables';
+
+.sideBar {
+  width: 287px;
+  margin-right: 16px;
+  padding: 0 22px;
+
+  display: flex;
+  flex-direction: column;
+
+  .loginBtn {
+    background-color: $brandColor;
+    height: 48px;
+    border-radius: 22px;
+    line-height: 48px;
+    font-size: 18px;
+    font-weight: 600;  
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

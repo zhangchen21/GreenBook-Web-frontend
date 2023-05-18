@@ -1,0 +1,45 @@
+@import 'src/Shared/layout/variables';
+
+.App {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+
+    .nav {
+        height: $navHeight;
+        opacity: 1;
+        border: none;
+    }
+
+    .OutLet {
+        width: 100%;
+        height: calc(100% - #{$navHeight});
+        margin-top: 16px;
+        overflow: hidden;
+    }
+
+    /* 滚动条的整体样式 */
+    ::-webkit-scrollbar {
+        width: 0px; /* 设置滚动条宽度 */
+    }
+    
+    /* 滚动条轨道样式 */
+    ::-webkit-scrollbar-track {
+        background-color: #F5F5F5; /* 设置滚动条轨道的背景色 */
+    }
+    
+    /* 滚动条滑块样式 */
+    ::-webkit-scrollbar-thumb {
+        background-color: #A9A9A9; /* 设置滚动条滑块的背景色 */
+        border-radius: 4px; /* 设置滚动条滑块的圆角 */
+        cursor: pointer;
+    }
+    
+    /* 滚动条滑块悬停样式 */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #808080; /* 设置滚动条滑块在悬停时的背景色 */
+    }
+}
