@@ -1,10 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
+import AppReducer from './AppSlice';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
-    posts: postsReducer,
-    comments: commentsReducer,
-    users: usersReducer
+    app: AppReducer
   }
 })
 

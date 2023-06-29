@@ -9,6 +9,9 @@ import {
   ShoppingOutlined
 } from "@ant-design/icons";
 import NormalButton from "../../Components/Button/NormalButton";
+import { useAppSelector } from "../../hooks";
+import { selectTrendColumn } from "../../AppSlice";
+import { maxTrendsWidth, minTrendsWidth } from "../../App";
 
 const mock: Trend[] = new Array(6).fill({
     title: 'test',
@@ -28,10 +31,6 @@ const mock: Trend[] = new Array(6).fill({
     }
   ])
 
-const minWidth = 202;
-const maxWidth = 238;
-const columnGap = 32;
-const sidebarWidth = 267;
 const channels = [
   {
     name: '推荐',
@@ -53,29 +52,7 @@ const channels = [
 function ContentBar() {
   const [trends, setTrends] = useState<Trend[]>(mock);
   const [currentChannel, setCurrentChannel] = useState(channels[0]);
-  const [column, setColumn] = useState(4);
-  const [marginRight, setmarginRight] = useState(columnGap);
-
-   // 监听窗口宽度变化，自动调整列数
-   useEffect(() => {
-    const handleResize = () => {
-      const width = window.innerWidth - sidebarWidth;
-      let count = Math.max(
-        Math.floor(width / (minWidth + columnGap)), // 每列最小宽度为202px
-        Math.floor(width / (maxWidth + columnGap)),
-      )
-      if (count < 2) count = 2; // 最少显示2列
-      if (count > 5) {
-        count = 5;
-        // 设置右边内边距，阻止继续变大
-        setmarginRight(width - count * (maxWidth + columnGap));
-      }
-      setColumn(count);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []); 
+  const column = useAppSelector(selectTrendColumn);
 
   return (
     <div className="ContentBar">
@@ -94,9 +71,9 @@ function ContentBar() {
       <div 
         className="trendlist"
         style={{
-          gridTemplateColumns: `repeat(${column}, 1fr`,
-          gap: ` 20px ${columnGap}px`,
-          marginRight: `${marginRight}px`,
+          gridTemplateColumns: `repeat(${column}, minmax(${minTrendsWidth}px, ${maxTrendsWidth}px)`,
+          gridGap: `${column === 2 ? 10 : 32}px ${column === 2 ? 10 : 32}px`,
+          margin: `0 ${column === 2 ? 10 : 32}px`,
         }}
       >
         {

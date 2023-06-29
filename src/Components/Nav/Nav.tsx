@@ -12,6 +12,8 @@ import { MenuItemType } from "antd/lib/menu/hooks/useItems";
 import {
   MenuOutlined,
 } from "@ant-design/icons";
+import { useAppSelector } from "../../hooks";
+import { selectShowNavItem } from "../../AppSlice";
 
 const items: MenuProps['items'] = [
   {
@@ -43,22 +45,12 @@ const Navbar: FC= () => {
     ?? "/homepage";
 
   const [current, setCurrent] = useState(location);
-  const [showNavItem, setShowNavItem] = useState(true);
-
+  const showNavItem = useAppSelector(selectShowNavItem);
+  
   const onClick = (nav: any) => {
     setCurrent(nav.key);
     navigate(nav.key);
   }
-
-  // 监听窗口宽度变化，自动调整列数
-  useEffect(() => {
-    const handleResize = () => {
-      setShowNavItem(window.innerWidth > 1400 ? true : false);
-    };
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []); 
 
   useEffect(() => {
     setCurrent(location);

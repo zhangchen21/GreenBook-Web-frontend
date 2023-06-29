@@ -8,12 +8,14 @@ import {
 } from "react-router-dom";
 import HomePage from "./Home/HomePage";
 import App from './App';
-import zhCN from "antd/lib/locale/zh_CN";
 import "antd/dist/antd.css";
 import Explore from './Explore/Explore';
+import { store } from './store';
+import { Provider } from 'react-redux';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} >
@@ -36,5 +38,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </Route>
       </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>,
 )
